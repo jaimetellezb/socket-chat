@@ -57,7 +57,7 @@ function renderizarMensaje(mensaje, yo) {
         html += "</div>";
         html += "</div>";
         html += '<div class="chat-img">';
-        html += '<img src="assets/images/users/5.jpg" alt="user" />';
+        html += '<img src="assets/images/users/profile1.png" alt="user" />';
         html += "</div>";
         html += '<div class="chat-time">' + hora + "</div>";
         html += "</li>";
@@ -65,7 +65,7 @@ function renderizarMensaje(mensaje, yo) {
         html += '<li class="animated fadeIn">';
         if (mensaje.nombre !== "Admin") {
             html += '<div class="chat-img">';
-            html += '<img src="assets/images/users/1.jpg" alt="user" />';
+            html += '<img src="assets/images/users/profile2.png" alt="user" />';
             html += "</div>";
         }
 
