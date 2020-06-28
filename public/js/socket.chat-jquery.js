@@ -30,7 +30,7 @@ function renderizarUsarios(personas) {
         html +=
             '<a data-id="' +
             personas[i].id +
-            '" href="javascript:void(0)"><img src="assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>' +
+            '" href="javascript:void(0)"><img src="assets/images/users/profile1.png" alt="user-img" class="img-circle"> <span>' +
             personas[i].nombre +
             ' <small class="text-success">online</small></span></a>';
         html += "</li>";
