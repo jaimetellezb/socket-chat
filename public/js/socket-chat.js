@@ -1,7 +1,5 @@
-var socket = io();
-
 // leer por parametros
-let params = new URLSearchParams(window.location.search);
+//let params = new URLSearchParams(window.location.search);
 
 //preguntar si viene el nombre
 if (!params.has("nombre") || !params.has("sala")) {
@@ -24,7 +22,8 @@ socket.on("connect", function() {
     // escucha este evento
     socket.emit("entrarChat", usuario, function(resp) {
         // respuesta del servidor
-        console.log("Los usuarios conectados", resp);
+        //console.log("Los usuarios conectados", resp);
+        renderizarUsarios(resp);
     });
 });
 
@@ -33,25 +32,17 @@ socket.on("disconnect", function() {
     console.log("Perdimos conexión con el servidor");
 });
 
-// Enviar información
-// socket.emit(
-//     "enviarMensaje", {
-//         usuario: "Fernando",
-//         mensaje: "Hola Mundo",
-//     },
-//     function(resp) {
-//         console.log("respuesta server: ", resp);
-//     }
-// );
-
 // Escuchar información
 socket.on("crearMensaje", function(mensaje) {
-    console.log("Servidor:", mensaje);
+    //console.log("Servidor:", mensaje);
+    renderizarMensaje(mensaje, false);
+    scrollBottom();
 });
 
 // escuchar cuando un usaurio entra o sale del chat
 socket.on("listaPersona", function(personas) {
     console.log(personas);
+    renderizarUsarios(personas);
 });
 
 // escuchar por parte del cliente mensajes privados
